@@ -2,7 +2,14 @@
 @import "./settings/colors";
 @import "./settings/fonts";
 
+@import "components/navigation";
+@import "components/home";
 
 * {
   box-sizing: border-box;
+}
+
+.page__container{
+  position: relative;
+  border: black solid 1px;
 }
