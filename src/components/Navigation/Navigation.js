@@ -44,7 +44,7 @@ function Navigation() {
           />
         </li>
         <li>
-          <NavigationItem content="Kontakt" to="home" />
+          <NavigationItem content="Kontakt" to="contact" />
         </li>
       </ul>
     </div>
