@@ -28,40 +28,17 @@
 
   .start__container--right {
     padding-top: 210px;
-    font: normal normal normal 38px/55px $font-base;
-    text-align: center;
-    letter-spacing: -0.76px;
-    color: $color-5;
-
-    img {
-      max-width: 253px;
-      margin-top: 25px;
-      margin-bottom: 65px;
-    }
+    display: flex;
+    flex-direction: column;
 
     .button__container {
+      margin-top: 65px;
       width: 100%;
       height: 120px;
       display: flex;
       flex-direction: row;
       justify-content: space-around;
       margin-bottom: 50px;
-
-      .link {
-        text-decoration: none;
-        font: normal normal 300 36px/45px $font-base;
-        color: $color-5;
-        opacity: 1;
-        text-align: center;
-        letter-spacing: 0;
-        padding-top: 13px;
-        height: 120px;
-        width: 310px;
-        border: 0.75px solid $color-5;
-
-
-      }
-
     }
 
     @media only screen and (max-width: 1300px) {
@@ -135,6 +112,73 @@
 
     .column__container {
       width: 100%;
+    }
+  }
+}
+
+#simpleSteps {
+  display: flex;
+  flex-direction: column;
+  //row-gap: 30px;
+  align-items: center;
+  width: 100%;
+
+
+  .box {
+    margin-top: 34px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background: $color-1;
+    padding: 71px 20% 75px 20%;
+    column-gap: 10%;
+    margin-bottom: 35px;
+
+    div {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      row-gap: 10px;
+
+      text-align: center;
+      opacity: 1;
+      letter-spacing: 0;
+      color: $color-5;
+
+      img {
+        width: 83px;
+        height: 83px;
+      }
+
+      .subtitle {
+        font: normal normal normal 18px/24px $font-base;
+        position: relative;
+
+        &:after {
+          content: "";
+          position: absolute;
+          top: 110%;
+          left: 50%;
+          width: 70px;
+          height: 2px;
+          background: #707070;
+          transform: translateX(-50%) ;
+        }
+      }
+
+      .description {
+        font: normal normal normal 16px/16px $font-base;
+      }
+
+    }
+    @media only screen and (max-width: 767px){
+      flex-direction: column;
+      div{
+        margin-bottom: 30px;
+      }
+
     }
   }
 }
