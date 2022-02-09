@@ -270,7 +270,8 @@
     .btn--active {
       border: 0.75px solid $color-5;
     }
-    @media only screen and (max-width: 767px){
+
+    @media only screen and (max-width: 767px) {
       flex-direction: column;
       row-gap: 30px;
       align-items: center;
@@ -301,8 +302,6 @@
   }
 
 
-
-
   .list {
     width: 100%;
     list-style: none;
@@ -330,7 +329,7 @@
       padding-bottom: 31px;
       border-bottom: 1px solid $color-5;
 
-      @media only screen and (max-width: 1200px){
+      @media only screen and (max-width: 1200px) {
         flex-direction: column;
         row-gap: 30px;
         align-items: flex-start;
@@ -367,6 +366,106 @@
         letter-spacing: 0;
         color: #3C3C3C;
         opacity: 1;
+      }
+    }
+  }
+}
+
+#contact {
+  background-image: url("../../assets/Background-Contact-Form.jpg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 100%;
+  @media only screen and (max-width: 1200px) {
+    background: white;
+  }
+  .section__container {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    background: #FFFFFFC9 0 0 no-repeat padding-box;
+
+    .form {
+      margin-right: 5%;
+      display: flex;
+      flex-direction: column;
+      width: 40%;
+      text-align: left;
+      font: normal normal 600 16px/16px $font-base;
+      letter-spacing: 0px;
+      color: #3C3C3C;
+      opacity: 1;
+
+      .input__box {
+        padding-top: 70px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+        margin-bottom: 40px;
+
+        .form__name {
+          width: 256px;
+          height: 62px;
+
+          #form__name {
+            border: none;
+            border-bottom: 0.75px solid $color-5;
+            font: normal normal normal 18px/24px $font-base;
+            letter-spacing: 0;
+            opacity: 1;
+            margin-top: 12px;
+            width: 100%;
+          }
+        }
+
+        .form__email {
+          width: 256px;
+          height: 62px;
+
+          #form__email {
+            border: none;
+            border-bottom: 0.75px solid $color-5;
+            font: normal normal normal 18px/24px $font-base;
+            letter-spacing: 0;
+            opacity: 1;
+            margin-top: 12px;
+            width: 100%;
+          }
+        }
+      }
+
+      .form__message {
+        #form__message {
+          margin-top: 12px;
+          height: 120px;
+          //max-width: 528px;
+          width: 100%;
+          border: none;
+          border-bottom: 0.75px solid $color-5;
+          font: normal normal normal 18px/24px $font-base;
+          letter-spacing: 0;
+          opacity: 1;
+          resize: none;
+        }
+
+        margin-bottom: 44px;
+      }
+
+
+      .btn__submit {
+        align-self: flex-end;
+        background: white;
+        width: 150px;
+        height: 50px;
+        border: 0.75px solid $color-5;
+        text-align: center;
+        font: normal normal 300 18px/32px $font-base;
+        letter-spacing: 0;
+        color: black;
+        opacity: 1;
+        cursor: pointer;
+        margin-bottom: 50px;
       }
     }
   }
