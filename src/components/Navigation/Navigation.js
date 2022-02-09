@@ -35,7 +35,7 @@ function Navigation() {
           <NavigationItem content="O&nbsp;co&nbsp;chodzi?" to="simpleSteps" />
         </li>
         <li>
-          <NavigationItem content="O&nbsp;nas" to="home" />
+          <NavigationItem content="O&nbsp;nas" to="aboutUs" />
         </li>
         <li>
           <NavigationItem
