@@ -379,6 +379,7 @@
   @media only screen and (max-width: 1200px) {
     background: white;
   }
+
   .section__container {
     display: flex;
     justify-content: flex-end;
@@ -395,6 +396,15 @@
       letter-spacing: 0px;
       color: #3C3C3C;
       opacity: 1;
+      @media only screen and (max-width: 1200px) {
+        width: 100%;
+        margin-left: 10%;
+      }
+      @media only screen and (max-width: 767px) {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
 
       .input__box {
         padding-top: 70px;
@@ -403,6 +413,7 @@
         justify-content: space-between;
         width: 100%;
         margin-bottom: 40px;
+
 
         .form__name {
           width: 256px;
@@ -432,6 +443,19 @@
             margin-top: 12px;
             width: 100%;
           }
+        }
+
+        @media only screen and (max-width: 1400px) {
+          flex-direction: column;
+          row-gap: 20px;
+        }
+        @media only screen and (max-width: 1200px) {
+          flex-direction: row;
+          justify-content: space-around;
+        }
+        @media only screen and (max-width: 767px) {
+          flex-direction: column;
+          row-gap: 20px;
         }
       }
 
