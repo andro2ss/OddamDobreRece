@@ -40,7 +40,7 @@ function Navigation() {
         <li>
           <NavigationItem
             content="Fundacja&nbsp;i&nbsp;organizacje"
-            to="home"
+            to="whoHelp"
           />
         </li>
         <li>
