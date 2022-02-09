@@ -15,10 +15,24 @@ function Navigation() {
       </div>
       <ul className="nav__page">
         <li className="active">
-          <NavigationItem content="Start" to="home" />
+          {/*<NavigationItem content="Start" to="home" />*/}
+          <Link
+            to="/"
+            style={{ textDecoration: "none", color: `black` }}
+            className="nav__item"
+            onClick={(e) => {
+              let activeItem = document.querySelector(".nav__page .active");
+              if (activeItem) {
+                activeItem.classList.remove("active");
+              }
+              e.target.parentElement.classList.add("active");
+            }}
+          >
+            Start
+          </Link>
         </li>
         <li>
-          <NavigationItem content="O&nbsp;co&nbsp;chodzi?" to="threeColumns" />
+          <NavigationItem content="O&nbsp;co&nbsp;chodzi?" to="simpleSteps" />
         </li>
         <li>
           <NavigationItem content="O&nbsp;nas" to="home" />
