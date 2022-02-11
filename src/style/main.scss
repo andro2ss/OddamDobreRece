@@ -12,12 +12,12 @@
   box-sizing: border-box;
 }
 
-.page__container{
+.page__container {
   position: relative;
   border: black solid 1px;
 }
 
-.section__title{
+.section__title {
   text-align: center;
   font: normal normal normal 38px/55px $font-base;
   letter-spacing: -0.76px;
@@ -26,3 +26,50 @@
   margin-bottom: 25px;
 }
 
+.account__container {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+
+  .account__form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: gray;
+    max-width: 384px;
+    width: 100%;
+    margin: 0 auto;
+
+    label {
+      display: block;
+      text-align: center;
+    }
+
+    .input__account {
+      border: none;
+      border-bottom: 1px solid orange;
+      width: 250px;
+      background: inherit;
+    }
+
+  }
+
+  .btn__box {
+    margin: 40px auto;
+    display: flex;
+    max-width: 504px;
+    width: 100%;
+    justify-content: space-between;
+
+    .btn__account {
+      background: white;
+      border: none;
+      cursor: pointer;
+    }
+    .frame{
+      border: 1px solid red;
+    }
+
+
+  }
+}
