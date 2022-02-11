@@ -35,21 +35,29 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: gray;
+    background: $color-1;
     max-width: 384px;
     width: 100%;
-    margin: 0 auto;
+    margin: 60px auto 0;
+    padding: 40px 0 9px 0;
+
+    text-align: left;
+    font: normal normal 600 16px/32px $font-base;
+    letter-spacing: 0;
+    color: $color-5;
+    opacity: 1;
 
     label {
       display: block;
-      text-align: center;
+
     }
 
     .input__account {
       border: none;
-      border-bottom: 1px solid orange;
+      border-bottom: 1px solid $color-5;
       width: 250px;
       background: inherit;
+      margin-bottom: 31px;
     }
 
   }
@@ -62,12 +70,23 @@
     justify-content: space-between;
 
     .btn__account {
+      text-decoration: none;
       background: white;
       border: none;
       cursor: pointer;
+      font: normal normal 300 18px/32px $font-base;
+      letter-spacing: 0;
+      color: $color-5;
+      opacity: 1;
+      padding: 13px 15px;
     }
-    .frame{
-      border: 1px solid red;
+
+    .center {
+      margin: 0 auto
+    }
+
+    .frame {
+      border: 0.75px solid $color-5
     }
 
 
