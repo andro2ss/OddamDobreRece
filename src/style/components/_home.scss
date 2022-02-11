@@ -405,9 +405,7 @@
         margin-right: auto;
       }
 
-
-      .input__box {
-        padding-top: 70px;
+      .form__box {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
@@ -415,11 +413,11 @@
         margin-bottom: 40px;
 
 
-        .form__name {
+        .input__box {
           width: 256px;
           height: 62px;
 
-          #form__name {
+          input {
             border: none;
             border-bottom: 0.75px solid $color-5;
             font: normal normal normal 18px/24px $font-base;
@@ -428,20 +426,9 @@
             margin-top: 12px;
             width: 100%;
           }
-        }
 
-        .form__email {
-          width: 256px;
-          height: 62px;
-
-          #form__email {
-            border: none;
-            border-bottom: 0.75px solid $color-5;
-            font: normal normal normal 18px/24px $font-base;
-            letter-spacing: 0;
-            opacity: 1;
-            margin-top: 12px;
-            width: 100%;
+          .error {
+            border-bottom: 3px solid red;
           }
         }
 
@@ -457,13 +444,13 @@
           flex-direction: column;
           row-gap: 20px;
         }
+
       }
 
       .form__message {
-        #form__message {
+        textarea {
           margin-top: 12px;
           height: 120px;
-          //max-width: 528px;
           width: 100%;
           border: none;
           border-bottom: 0.75px solid $color-5;
@@ -473,8 +460,30 @@
           resize: none;
         }
 
+        .error {
+          border-bottom: 3px solid red;
+        }
+
         margin-bottom: 44px;
       }
+
+      .error__message {
+        color: red;
+        visibility: hidden;
+        margin-top: 2px;
+
+      }
+
+      .success__message {
+        color: green;
+        margin: 20px auto;
+        visibility: hidden;
+      }
+
+      .visible {
+        visibility: visible;
+      }
+
 
 
       .btn__submit {
