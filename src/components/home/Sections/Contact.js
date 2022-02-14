@@ -1,11 +1,11 @@
 import { Decoration } from "../../common/decorations/Decoration";
 import React, { useState } from "react";
-import { sendForms } from "../../../functions/SendForms";
-import { validationEmail } from "../../../functions/ValidationEmail";
-import { validationName } from "../../../functions/ValidationName";
-import { validationMessage } from "../../../functions/ValidationMessage";
+import { sendForms } from "../../../functions/contactSection/SendForms";
+import { validationEmail } from "../../../functions/contactSection/ValidationEmail";
+import { validationName } from "../../../functions/contactSection/ValidationName";
+import { validationMessage } from "../../../functions/contactSection/ValidationMessage";
 import LinearIndeterminate from "../../common/Spinners";
-import { handleSubmitBtn } from "../../../functions/HandleSubmitBtn";
+import { handleSubmitBtn } from "../../../functions/contactSection/HandleSubmitBtn";
 
 export function Contact() {
   const [name, setName] = useState("");

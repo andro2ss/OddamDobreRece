@@ -1,7 +1,7 @@
+import { emailCheck } from "../common/emailCheck";
+
 export function validationEmail(status, setStatus) {
   const validateEmail = (email) => {
-    const emailCheck =
-      /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/i;
     let tempStatus = status;
     const domObject = document.getElementById("form__email");
     if (!emailCheck.test(email) && email.length) {
