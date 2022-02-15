@@ -1,14 +1,31 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Decoration } from "./common/decorations/Decoration";
 import { Link } from "react-router-dom";
-import { errorHandler } from "../functions/accountSection/ErrorHandler";
+import { InputEmail } from "./accountHandling/InputEmail";
+import { InputPassword } from "./accountHandling/InputPassword";
+import { accountEmailValidation } from "../functions/accountSection/accountEmailValidation";
+import { accountPasswordValidation } from "../functions/accountSection/accountPasswordValidation";
 
 function Login(props) {
   const [login, setLogin] = useState("");
   const [password, setPassword] = useState("");
-  const [error, setError] = useState([0, 0]);
-  const errorsHandler = errorHandler(error, login, password, setError);
-
+  const [errorEmail, setErrorEmail] = useState(0);
+  const [errorPassword, setErrorPassword] = useState(0);
+  function validation() {
+    accountEmailValidation(login, setErrorEmail);
+    accountPasswordValidation(password, setErrorPassword);
+  }
+  function submit() {
+    validation();
+    if (errorEmail + errorPassword === 0) {
+      console.log("no error");
+    } else {
+      console.log("error in form");
+    }
+  }
+  useEffect(() => {
+    console.log(errorEmail);
+  }, [errorEmail]);
   return (
     <div className="account__container">
       <h2 className="section__title"> Zaloguj się</h2>
@@ -17,48 +34,41 @@ function Login(props) {
         className="account__form"
         onSubmit={(e) => {
           e.preventDefault();
-          errorsHandler();
+          submit();
         }}
       >
         <button style={{ display: "none" }}>send</button>
         <div className="box__account">
-          <label htmlFor="login__email">Email</label>
-          <input
-            type="email"
-            id="login__email"
-            name="login__email"
-            className="input__account"
-            value={login}
+          <InputEmail
+            email={login}
             onChange={(e) => {
               setLogin(e.target.value);
             }}
+            onBlur={() => {
+              accountEmailValidation(login, setErrorEmail);
+            }}
           />
-          <span className="error__message" id="login__email--error">
-            Podano nieprawidłowy email!
-          </span>
-
-          <label htmlFor="login__password">Hasło</label>
-          <input
-            type="password"
-            id="login__password"
-            name="login__password"
-            className="input__account"
-            value={password}
+          <InputPassword
+            password={password}
             onChange={(e) => {
               setPassword(e.target.value);
             }}
+            onBlur={() => {
+              accountPasswordValidation(password, setErrorPassword);
+            }}
           />
-          <span className="error__message" id="login__password--error">
-            Zbyt krótkie hasło! (min. 6 znaków)
-          </span>
         </div>
       </form>
       <div className="btn__box">
-        {" "}
         <Link to="../rejestracja" className="btn__account">
           Załóż konto
-        </Link>{" "}
-        <button className="btn__account frame" onClick={() => errorsHandler()}>
+        </Link>
+        <button
+          className="btn__account frame"
+          onClick={() => {
+            submit();
+          }}
+        >
           Zaloguj się
         </button>
       </div>
