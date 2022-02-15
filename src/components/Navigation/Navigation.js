@@ -1,17 +1,29 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import NavigationItem from "./NavigationItem";
+import { Button_OddajRzecz } from "../common/buttons/Button_OddajRzecz";
+import { Button_Wyloguj } from "../common/buttons/Button_Wyloguj";
 
-function Navigation() {
+function Navigation({ logUser, setLogUser }) {
   return (
     <div className="nav__container">
       <div className="nav__user">
-        <Link to="logowanie" className="link">
-          Zaloguj
-        </Link>
-        <Link to="rejestracja" className="link active">
-          Załóż konto
-        </Link>
+        {logUser.email !== "init" ? (
+          <>
+            <span>Cześć {logUser.email}</span>
+            <Button_OddajRzecz extraClass="small" />
+            <Button_Wyloguj extraClass="small" setLogUser={setLogUser} />
+          </>
+        ) : (
+          <>
+            <Link to="logowanie" className="link">
+              Zaloguj
+            </Link>
+            <Link to="rejestracja" className="link active">
+              Załóż konto
+            </Link>
+          </>
+        )}
       </div>
       <ul className="nav__page">
         <li className="active">
