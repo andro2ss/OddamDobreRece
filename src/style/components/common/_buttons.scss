@@ -1,5 +1,6 @@
 .btn__link {
-  display: block;
+  display: flex;
+  flex-direction: column;
   text-decoration: none;
   font: normal normal 300 36px/45px $font-base;
   color: $color-5;
@@ -10,4 +11,18 @@
   height: 120px;
   width: 310px;
   border: 0.75px solid $color-5;
+}
+
+.btn__link.small {
+  font: normal normal normal 13px/13px $font-base;
+  height: auto;
+  width: auto;
+  flex-direction: row;
+  column-gap: 4px;
+  padding: 9px 6px;
+  border: 0.75px solid $color-3;
+  &:last-child{
+    border: none;
+  }
+
 }
