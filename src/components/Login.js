@@ -5,27 +5,33 @@ import { InputEmail } from "./accountHandling/InputEmail";
 import { InputPassword } from "./accountHandling/InputPassword";
 import { accountEmailValidation } from "../functions/accountSection/accountEmailValidation";
 import { accountPasswordValidation } from "../functions/accountSection/accountPasswordValidation";
+import accountLoginUser from "../functions/accountSection/accountLoginUser";
 
-function Login(props) {
+function Login({ loadedUsers, setLogUser }) {
   const [login, setLogin] = useState("");
   const [password, setPassword] = useState("");
   const [errorEmail, setErrorEmail] = useState(0);
   const [errorPassword, setErrorPassword] = useState(0);
+  const [sendRequest, setSendRequest] = useState(0);
+
   function validation() {
     accountEmailValidation(login, setErrorEmail);
     accountPasswordValidation(password, setErrorPassword);
   }
   function submit() {
     validation();
-    if (errorEmail + errorPassword === 0) {
-      console.log("no error");
-    } else {
-      console.log("error in form");
-    }
+    setSendRequest(1);
   }
+
   useEffect(() => {
-    console.log(errorEmail);
-  }, [errorEmail]);
+    if (errorPassword + errorEmail === 0 && sendRequest === 1) {
+      accountLoginUser(loadedUsers, login, password, setLogUser);
+      setSendRequest(0);
+    } else {
+      setSendRequest(0);
+    }
+  }, [sendRequest]);
+
   return (
     <div className="account__container">
       <h2 className="section__title"> Zaloguj się</h2>
@@ -43,6 +49,9 @@ function Login(props) {
             email={login}
             onChange={(e) => {
               setLogin(e.target.value);
+              if (errorEmail > 0) {
+                accountEmailValidation(login, setErrorEmail);
+              }
             }}
             onBlur={() => {
               accountEmailValidation(login, setErrorEmail);
@@ -52,6 +61,9 @@ function Login(props) {
             password={password}
             onChange={(e) => {
               setPassword(e.target.value);
+              if (errorPassword > 0) {
+                accountPasswordValidation(password, setErrorPassword);
+              }
             }}
             onBlur={() => {
               accountPasswordValidation(password, setErrorPassword);
