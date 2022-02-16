@@ -13,19 +13,29 @@ function Questionnaire({ setInfoBarText }) {
         setSectionBody(
           <div>
             <h3>Zaznacz co chcesz oddać:</h3>
-            <div>
-              <input type="checkbox" id="ubrania1" name="ubrania1" />
-              <label htmlFor="ubrania1">
-                ubrania, które nadają się do ponownego użycia
-              </label>
-              <input type="checkbox" id="ubrania2" name="ubrania2" />
-              <label htmlFor="ubrania2">ubrania, do wyrzucenia</label>
-              <input type="checkbox" id="zabawki" name="zabawki" />
-              <label htmlFor="zabawki">zabawki</label>
-              <input type="checkbox" id="ksiazki" name="ksiazki" />
-              <label htmlFor="ksiazki">książki</label>
-              <input type="checkbox" id="inne" name="inne" />
-              <label htmlFor="inne">Inne</label>
+            <div className="checkbox__container">
+              <div className="flex">
+                <input type="radio" id="ubrania1" name="ubrania1" />
+                <label htmlFor="ubrania1">
+                  ubrania, które nadają się do ponownego użycia
+                </label>
+              </div>
+              <div className="flex">
+                <input type="radio" id="ubrania2" name="ubrania2" />
+                <label htmlFor="ubrania2">ubrania, do wyrzucenia</label>
+              </div>
+              <div className="flex">
+                <input type="radio" id="zabawki" name="zabawki" />
+                <label htmlFor="zabawki">zabawki</label>
+              </div>
+              <div className="flex">
+                <input type="radio" id="ksiazki" name="ksiazki" />
+                <label htmlFor="ksiazki">książki</label>
+              </div>
+              <div className="flex">
+                <input type="radio" id="inne" name="inne" />
+                <label htmlFor="inne">Inne</label>
+              </div>
             </div>
           </div>
         );
@@ -101,19 +111,19 @@ function Questionnaire({ setInfoBarText }) {
             <box>
               <div>
                 <h4>Adres odbioru:</h4>
-                <div>
+                <div className="flex">
                   <label htmlFor="ulica">Ulica</label>
                   <input type="text" id="ulica" name="ulica" />
                 </div>
-                <div>
+                <div className="flex">
                   <label htmlFor="miasto">Miasto</label>
                   <input type="text" id="miasto" name="miasto" />
                 </div>
-                <div>
+                <div className="flex">
                   <label htmlFor="kodPocztowy">Kod pocztowy</label>
                   <input type="text" id="kodPocztowy" name="kodPocztowy" />
                 </div>
-                <div>
+                <div className="flex">
                   <label htmlFor="nrTel">Numer telefonu</label>
                   <input type="text" id="nrTel" name="nrTel" />
                 </div>
@@ -158,15 +168,23 @@ function Questionnaire({ setInfoBarText }) {
 
   return (
     <section id="questionnaire">
-      <span>Krok {step}/4</span>
+      <span className="stepCounter">Krok {step}/4</span>
       <div>{sectionBody}</div>
-      <box>
+      <box className="btn__container">
         {step === 1 ? (
           ""
         ) : (
-          <button onClick={() => stepHandle(-1)}>Wstecz</button>
+          <button className="btn__stepChange" onClick={() => stepHandle(-1)}>
+            Wstecz
+          </button>
         )}
-        {step === 4 ? "" : <button onClick={() => stepHandle(1)}>Dalej</button>}
+        {step === 4 ? (
+          ""
+        ) : (
+          <button className="btn__stepChange" onClick={() => stepHandle(1)}>
+            Dalej
+          </button>
+        )}
       </box>
     </section>
   );

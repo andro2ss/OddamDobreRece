@@ -1,0 +1,87 @@
+#questionnaire {
+  background-image: url("../../../assets/Background-Form.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  padding: 36px 40% 50px 5%;
+  height: 800px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+
+  .stepCounter {
+    text-align: left;
+    font: normal normal 300 24px/27px $font-base;
+    letter-spacing: 0;
+    color: $color-5;
+    opacity: 1;
+  }
+
+  h3 {
+    text-align: left;
+    font: normal normal 600 36px/45px $font-base;
+    letter-spacing: 0px;
+    color: #000000;
+    opacity: 1;
+    margin: 70px 0 50px 0;
+  }
+
+  .flex{
+    display: flex;
+    margin: 20px 0;
+  }
+
+  label {
+    text-align: left;
+    font: normal normal 300 24px/32px $font-base;
+    letter-spacing: 0;
+    color: #000000;
+    opacity: 1;
+    cursor: pointer;
+  }
+
+  input[type="radio"] {
+    margin-right: 20px;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -o-appearance: none;
+    appearance:none;
+    border: 0.75px solid #3C3C3C;
+
+    &:checked{
+      background: $color-3;
+    }
+  }
+
+
+
+  .checkbox__container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .btn__container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    column-gap: 50px;
+    align-items: flex-end;
+
+    .btn__stepChange {
+      width: 180px;
+      height: 80px;
+      text-align: center;
+      font: normal normal 300 24px/32px $font-base;
+      letter-spacing: 0;
+      color: #000000;
+      opacity: 1;
+      background: inherit;
+      border: 0.75px solid $color-5;
+
+    }
+  }
+}
