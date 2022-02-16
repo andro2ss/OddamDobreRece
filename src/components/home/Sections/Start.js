@@ -3,7 +3,7 @@ import { Decoration } from "../../common/decorations/Decoration";
 import { Button_OddajRzecz } from "../../common/buttons/Button_OddajRzecz";
 import { Button_ZorganizujZbiorke } from "../../common/buttons/Button_ZorganizujZbiorke";
 
-export function Start() {
+export function Start({ logUser }) {
   return (
     <div id="start">
       <img
@@ -19,8 +19,8 @@ export function Start() {
         </h2>
         <Decoration />
         <div className="button__container">
-          <Button_OddajRzecz />
-          <Button_ZorganizujZbiorke />
+          <Button_OddajRzecz logUser={logUser} />
+          <Button_ZorganizujZbiorke logUser={logUser} />
         </div>
       </div>
     </div>

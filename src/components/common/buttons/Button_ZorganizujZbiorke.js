@@ -1,11 +1,20 @@
 import { Link } from "react-router-dom";
 import React from "react";
 
-export function Button_ZorganizujZbiorke() {
+export function Button_ZorganizujZbiorke({ logUser }) {
   return (
-    <Link to="logowanie" className="btn__link">
-      ZORGANIZUJ <br />
-      ZBIÓRKĘ
-    </Link>
+    <>
+      {logUser.email !== "init" ? (
+        <Link to="zorganizuj-zbiorke" className="btn__link">
+          ZORGANIZUJ <br />
+          ZBIÓRKĘ
+        </Link>
+      ) : (
+        <Link to="logowanie" className="btn__link">
+          ZORGANIZUJ <br />
+          ZBIÓRKĘ
+        </Link>
+      )}
+    </>
   );
 }

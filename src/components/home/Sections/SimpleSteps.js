@@ -2,7 +2,7 @@ import { Decoration } from "../../common/decorations/Decoration";
 import { Button_OddajRzecz } from "../../common/buttons/Button_OddajRzecz";
 import React from "react";
 
-export function SimpleSteps() {
+export function SimpleSteps({ logUser }) {
   return (
     <div id="simpleSteps">
       <h2 className="section__title">Wystarczą 4 proste kroki</h2>
@@ -49,7 +49,7 @@ export function SimpleSteps() {
           </span>
         </div>
       </div>
-      <Button_OddajRzecz />
+      <Button_OddajRzecz logUser={logUser} />
     </div>
   );
 }

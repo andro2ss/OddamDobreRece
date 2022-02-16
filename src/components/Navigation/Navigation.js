@@ -11,7 +11,7 @@ function Navigation({ logUser, setLogUser }) {
         {logUser.email !== "init" ? (
           <>
             <span>Cześć {logUser.email}</span>
-            <Button_OddajRzecz extraClass="small" />
+            <Button_OddajRzecz extraClass="small" logUser={logUser} />
             <Button_Wyloguj extraClass="small" setLogUser={setLogUser} />
           </>
         ) : (

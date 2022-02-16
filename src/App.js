@@ -2,13 +2,14 @@ import React, { useEffect, useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Navigation from "./components/Navigation/Navigation";
 import Home from "./components/home/Home";
-import Form from "./components/Form";
+import OddajRzeczy from "./components/OddajRzeczy";
 import Login from "./components/Login";
 import Register from "./components/Register";
 import Logout from "./components/Logout";
 import Container from "@mui/material/Container";
 import { collection, onSnapshot } from "firebase/firestore";
 import db from "./firebase";
+import ZorganizujZbiorke from "./components/ZorganizujZbiorke";
 
 function App() {
   const [loadedUsers, setLoadedUsers] = useState({
@@ -42,8 +43,9 @@ function App() {
       <BrowserRouter>
         <Navigation logUser={logUser} setLogUser={setLogUser} />
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/oddaj-rzeczy" element={<Form />} />
+          <Route path="/" element={<Home logUser={logUser} />} />
+          <Route path="/oddaj-rzeczy" element={<OddajRzeczy />} />
+          <Route path="/zorganizuj-zbiorke" element={<ZorganizujZbiorke />} />
           <Route
             path="/logowanie"
             element={

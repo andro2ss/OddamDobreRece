@@ -6,12 +6,12 @@ import { AboutUs } from "./Sections/AboutUs";
 import { WhoHelp } from "./Sections/WhoHelp";
 import { Contact } from "./Sections/Contact";
 
-function Home(props) {
+function Home({ logUser }) {
   return (
     <>
-      <Start />
+      <Start logUser={logUser} />
       <ThreeColumns />
-      <SimpleSteps />
+      <SimpleSteps logUser={logUser} />
       <AboutUs />
       <WhoHelp />
       <Contact />
