@@ -5,11 +5,11 @@ import { Button_ZorganizujZbiorke } from "../common/buttons/Button_ZorganizujZbi
 
 export function Start({ logUser }) {
   return (
-    <div id="start">
+    <section id="start">
       <img
         src={require("../../assets/Home-Hero-Image.jpg")}
         alt="Losowe przedmioty do oddania"
-        className="home__image"
+        className="start__image"
       />
       <div className="start__container--right">
         <h2 className="section__title">
@@ -23,6 +23,6 @@ export function Start({ logUser }) {
           <Button_ZorganizujZbiorke logUser={logUser} />
         </div>
       </div>
-    </div>
+    </section>
   );
 }

@@ -7,6 +7,7 @@
 
 @import "components/common/buttons";
 @import "components/common/decorations";
+@import "components/common/images";
 
 @import "components/sections/aboutUs";
 @import "components/sections/contact";
@@ -14,10 +15,13 @@
 @import "components/sections/start";
 @import "components/sections/threeColumns";
 @import "components/sections/whoHelp";
+@import "components/sections/oddajRzeczyIntro";
 
 
 * {
   box-sizing: border-box;
+  transition-duration: 500ms;
+
 }
 
 .page__container {
