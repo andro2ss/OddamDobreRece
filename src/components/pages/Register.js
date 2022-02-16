@@ -4,10 +4,10 @@ import { Link } from "react-router-dom";
 import { InputEmail } from "../accountHandling/InputEmail";
 import { InputPassword } from "../accountHandling/InputPassword";
 import { InputPasswordRepeat } from "../accountHandling/InputPasswordRepeat";
-import { accountEmailValidation } from "../../functions/accountSection/accountEmailValidation";
-import { accountPasswordValidation } from "../../functions/accountSection/accountPasswordValidation";
-import { accountPasswordValidation2 } from "../../functions/accountSection/accountPassword2Validation";
-import { createNewUser } from "../../functions/accountSection/accountRegisterUser";
+import { accountEmailValidation } from "../../functions/accountSection/emailValidation";
+import { accountPasswordValidation } from "../../functions/accountSection/passwordValidation";
+import { accountPasswordValidation2 } from "../../functions/accountSection/password2Validation";
+import registerNewUser from "../../functions/accountSection/registerNewUser";
 
 function Register({ loadedUsers }) {
   const [login, setLogin] = useState("");
@@ -27,25 +27,16 @@ function Register({ loadedUsers }) {
     validation();
     setSendRequest(1);
   }
+
   useEffect(() => {
-    if (
-      errorEmail + errorPassword + errorPassword2 === 0 &&
-      sendRequest === 1
-    ) {
-      let tempUser = loadedUsers.filter((element) => {
-        return element.email === login;
-      });
-      if (tempUser.length > 0) {
-        if (!!tempUser[0].email) {
-          alert("Błąd! Email jest już używany!");
-        }
-      } else {
-        createNewUser(login, password);
-      }
-      setSendRequest(0);
-    } else {
-      setSendRequest(0);
-    }
+    registerNewUser(
+      errorPassword2 + errorPassword + errorEmail,
+      sendRequest,
+      setSendRequest,
+      loadedUsers,
+      login,
+      password
+    );
   }, [sendRequest]);
   return (
     <div className="account__container">

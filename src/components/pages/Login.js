@@ -3,9 +3,9 @@ import { Decoration } from "../common/decorations/Decoration";
 import { Link } from "react-router-dom";
 import { InputEmail } from "../accountHandling/InputEmail";
 import { InputPassword } from "../accountHandling/InputPassword";
-import { accountEmailValidation } from "../../functions/accountSection/accountEmailValidation";
-import { accountPasswordValidation } from "../../functions/accountSection/accountPasswordValidation";
-import accountLoginUser from "../../functions/accountSection/accountLoginUser";
+import { accountEmailValidation } from "../../functions/accountSection/emailValidation";
+import { accountPasswordValidation } from "../../functions/accountSection/passwordValidation";
+import accountLoginUser from "../../functions/accountSection/loginUser";
 
 function Login({ loadedUsers, setLogUser }) {
   const [login, setLogin] = useState("");
