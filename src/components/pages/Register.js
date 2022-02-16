@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
-import { Decoration } from "./common/decorations/Decoration";
+import { Decoration } from "../common/decorations/Decoration";
 import { Link } from "react-router-dom";
-import { InputEmail } from "./accountHandling/InputEmail";
-import { InputPassword } from "./accountHandling/InputPassword";
-import { InputPasswordRepeat } from "./accountHandling/InputPasswordRepeat";
-import { accountEmailValidation } from "../functions/accountSection/accountEmailValidation";
-import { accountPasswordValidation } from "../functions/accountSection/accountPasswordValidation";
-import { accountPasswordValidation2 } from "../functions/accountSection/accountPassword2Validation";
-import { createNewUser } from "../functions/accountSection/accountRegisterUser";
+import { InputEmail } from "../accountHandling/InputEmail";
+import { InputPassword } from "../accountHandling/InputPassword";
+import { InputPasswordRepeat } from "../accountHandling/InputPasswordRepeat";
+import { accountEmailValidation } from "../../functions/accountSection/accountEmailValidation";
+import { accountPasswordValidation } from "../../functions/accountSection/accountPasswordValidation";
+import { accountPasswordValidation2 } from "../../functions/accountSection/accountPassword2Validation";
+import { createNewUser } from "../../functions/accountSection/accountRegisterUser";
 
 function Register({ loadedUsers }) {
   const [login, setLogin] = useState("");

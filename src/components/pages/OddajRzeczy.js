@@ -1,5 +1,5 @@
 import React from "react";
-import { Contact } from "./home/Sections/Contact";
+import { Contact } from "../sections/Contact";
 
 function OddajRzeczy(props) {
   return (

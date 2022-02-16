@@ -1,5 +1,5 @@
 import React from "react";
-import { Decoration } from "./common/decorations/Decoration";
+import { Decoration } from "../common/decorations/Decoration";
 import { Link } from "react-router-dom";
 
 function Logout() {

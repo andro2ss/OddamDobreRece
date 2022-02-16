@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { Decoration } from "./common/decorations/Decoration";
+import { Decoration } from "../common/decorations/Decoration";
 import { Link } from "react-router-dom";
-import { InputEmail } from "./accountHandling/InputEmail";
-import { InputPassword } from "./accountHandling/InputPassword";
-import { accountEmailValidation } from "../functions/accountSection/accountEmailValidation";
-import { accountPasswordValidation } from "../functions/accountSection/accountPasswordValidation";
-import accountLoginUser from "../functions/accountSection/accountLoginUser";
+import { InputEmail } from "../accountHandling/InputEmail";
+import { InputPassword } from "../accountHandling/InputPassword";
+import { accountEmailValidation } from "../../functions/accountSection/accountEmailValidation";
+import { accountPasswordValidation } from "../../functions/accountSection/accountPasswordValidation";
+import accountLoginUser from "../../functions/accountSection/accountLoginUser";
 
 function Login({ loadedUsers, setLogUser }) {
   const [login, setLogin] = useState("");

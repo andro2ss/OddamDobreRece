@@ -1,0 +1,57 @@
+#threeColumns {
+  background: transparent url('../../../assets/3 Columns Background.png') 0% 0% repeat padding-box;
+  opacity: 1;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding-top: 46px;
+  padding-bottom: 86px;
+
+  .column__container {
+    display: flex;
+    flex-direction: column;
+    max-width: 334px;
+    column-gap: 50px;
+
+    span {
+      &:first-child {
+        text-align: center;
+        font: normal normal 300 90px/122px $font-base;
+        letter-spacing: 0;
+        color: $color-2;
+        opacity: 1;
+      }
+
+      &:nth-child(2) {
+        text-align: center;
+        font: normal normal normal 18px/30px $font-base;
+        letter-spacing: -0.36px;
+        color: $color-5;
+        opacity: 1;
+        margin-top: 10px;
+        margin-bottom: 28px;
+      }
+
+      &:last-child {
+        text-align: center;
+        font: normal normal 300 16px/18px $font-alt;
+        letter-spacing: -0.32px;
+        color: $color-5;
+        opacity: 1;
+        margin: 0 16px;
+      }
+    }
+
+  }
+
+  @media only screen and (max-width: 767px) {
+    flex-direction: column;
+    align-items: center;
+    row-gap: 50px;
+
+    .column__container {
+      width: 100%;
+    }
+  }
+}

@@ -1,13 +1,13 @@
 import React from "react";
-import { Decoration } from "../../common/decorations/Decoration";
-import { Button_OddajRzecz } from "../../common/buttons/Button_OddajRzecz";
-import { Button_ZorganizujZbiorke } from "../../common/buttons/Button_ZorganizujZbiorke";
+import { Decoration } from "../common/decorations/Decoration";
+import { Button_OddajRzecz } from "../common/buttons/Button_OddajRzecz";
+import { Button_ZorganizujZbiorke } from "../common/buttons/Button_ZorganizujZbiorke";
 
 export function Start({ logUser }) {
   return (
     <div id="start">
       <img
-        src={require("../../../assets/Home-Hero-Image.jpg")}
+        src={require("../../assets/Home-Hero-Image.jpg")}
         alt="Losowe przedmioty do oddania"
         className="home__image"
       />

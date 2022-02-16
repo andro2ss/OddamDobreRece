@@ -1,0 +1,131 @@
+#contact {
+  background-image: url("../../../assets/Background-Contact-Form.jpg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 100%;
+  @media only screen and (max-width: 1200px) {
+    background: white;
+  }
+
+  .section__container {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    background: #FFFFFFC9 0 0 no-repeat padding-box;
+
+    .form {
+      margin-right: 5%;
+      display: flex;
+      flex-direction: column;
+      width: 40%;
+      text-align: left;
+      font: normal normal 600 16px/16px $font-base;
+      letter-spacing: 0px;
+      color: #3C3C3C;
+      opacity: 1;
+      @media only screen and (max-width: 1200px) {
+        width: 100%;
+        margin-left: 10%;
+      }
+      @media only screen and (max-width: 767px) {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .form__box {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+        margin-bottom: 40px;
+
+
+        .input__box {
+          width: 256px;
+          height: 62px;
+
+          input {
+            border: none;
+            border-bottom: 0.75px solid $color-5;
+            font: normal normal normal 18px/24px $font-base;
+            letter-spacing: 0;
+            opacity: 1;
+            margin-top: 12px;
+            width: 100%;
+          }
+
+          .error {
+            border-bottom: 3px solid red;
+          }
+        }
+
+        @media only screen and (max-width: 1400px) {
+          flex-direction: column;
+          row-gap: 20px;
+        }
+        @media only screen and (max-width: 1200px) {
+          flex-direction: row;
+          justify-content: space-around;
+        }
+        @media only screen and (max-width: 767px) {
+          flex-direction: column;
+          row-gap: 20px;
+        }
+
+      }
+
+      .form__message {
+        textarea {
+          margin-top: 12px;
+          height: 120px;
+          width: 100%;
+          border: none;
+          border-bottom: 0.75px solid $color-5;
+          font: normal normal normal 18px/24px $font-base;
+          letter-spacing: 0;
+          opacity: 1;
+          resize: none;
+        }
+
+        .error {
+          border-bottom: 3px solid red;
+        }
+
+        margin-bottom: 44px;
+      }
+
+      .error__message {
+        color: red;
+        visibility: hidden;
+        margin-top: 2px;
+
+      }
+
+      .success__message {
+        color: green;
+        margin: 20px auto;
+        visibility: hidden;
+      }
+
+      .visible {
+        visibility: visible;
+      }
+
+
+      .btn__submit {
+        align-self: flex-end;
+        background: white;
+        width: 150px;
+        height: 50px;
+        border: 0.75px solid $color-5;
+        text-align: center;
+        font: normal normal 300 18px/32px $font-base;
+        letter-spacing: 0;
+        color: black;
+        opacity: 1;
+        cursor: pointer;
+        margin-bottom: 50px;
+      }
+    }
+  }
+}

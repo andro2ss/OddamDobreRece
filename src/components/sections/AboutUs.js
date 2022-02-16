@@ -1,4 +1,4 @@
-import { Decoration } from "../../common/decorations/Decoration";
+import { Decoration } from "../common/decorations/Decoration";
 import React from "react";
 
 export function AboutUs() {
@@ -14,14 +14,14 @@ export function AboutUs() {
         </span>
         <img
           className="img--sign"
-          src={require("../../../assets/Signature@2x.png")}
+          src={require("../../assets/Signature@2x.png")}
           alt="podpis"
         />
       </div>
       <div className="img__container">
         <img
           className="img--people"
-          src={require("../../../assets/People.jpg")}
+          src={require("../../assets/People.jpg")}
           alt="ludzie"
         />
       </div>

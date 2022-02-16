@@ -1,0 +1,130 @@
+#whoHelp {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .btn__box {
+    margin-top: 60px;
+    margin-bottom: 70px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    column-gap: 10%;
+
+    button {
+      width: 208px;
+      height: 79px;
+      background: white;
+      text-align: center;
+      font: normal normal normal 24px/24px $font-base;
+      letter-spacing: 0;
+      color: $color-5;
+      opacity: 1;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn--active {
+      border: 0.75px solid $color-5;
+    }
+
+    @media only screen and (max-width: 767px) {
+      flex-direction: column;
+      row-gap: 30px;
+      align-items: center;
+    }
+  }
+
+  .pagination__box {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    column-gap: 30px;
+
+    .btn--pagination {
+      background: white;
+      border: none;
+      padding: 13px 15px;
+      text-align: center;
+      font: normal normal normal 18px/24px $font-base;
+      letter-spacing: 0;
+      color: $color-5;
+      opacity: 1;
+    }
+
+    .btn--active {
+      border: 0.75px solid $color-5;
+    }
+  }
+
+
+  .list {
+    width: 100%;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    row-gap: 34px;
+    padding: 0 20% 60px;
+
+    .list__subtitle {
+      text-align: center;
+      font: normal normal normal 22px/30px $font-base;
+      letter-spacing: 0;
+      color: #3C3C3C;
+      opacity: 1;
+      padding: 0 10% 60px 10%;
+    }
+
+
+    .list__item {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      padding-bottom: 31px;
+      border-bottom: 1px solid $color-5;
+
+      @media only screen and (max-width: 1200px) {
+        flex-direction: column;
+        row-gap: 30px;
+        align-items: flex-start;
+      }
+
+      &:nth-child(4) {
+        border-bottom: none;
+      }
+
+      .box--left {
+        display: flex;
+        flex-direction: column;
+
+        .text--name {
+          text-align: left;
+          font: normal normal 300 26px/31px $font-alt;
+          letter-spacing: 0;
+          color: #3C3C3C;
+          opacity: 1;
+        }
+
+        .text--description {
+          text-align: left;
+          font: italic normal 300 18px/22px $font-alt;
+          letter-spacing: 0;
+          color: #3C3C3C;
+          opacity: 1;
+        }
+      }
+
+      .text--other {
+        text-align: left;
+        font: normal normal 300 18px/22px $font-alt;
+        letter-spacing: 0;
+        color: #3C3C3C;
+        opacity: 1;
+      }
+    }
+  }
+}

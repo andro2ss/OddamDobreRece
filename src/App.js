@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Navigation from "./components/Navigation/Navigation";
-import Home from "./components/home/Home";
-import OddajRzeczy from "./components/OddajRzeczy";
-import Login from "./components/Login";
-import Register from "./components/Register";
-import Logout from "./components/Logout";
+import Navigation from "./components/navigation/Navigation";
+import Home from "./components/pages/Home";
+import OddajRzeczy from "./components/pages/OddajRzeczy";
+import Login from "./components/pages/Login";
+import Register from "./components/pages/Register";
+import Logout from "./components/pages/Logout";
 import Container from "@mui/material/Container";
 import { collection, onSnapshot } from "firebase/firestore";
 import db from "./firebase";
-import ZorganizujZbiorke from "./components/ZorganizujZbiorke";
+import ZorganizujZbiorke from "./components/pages/ZorganizujZbiorke";
 
 function App() {
   const [loadedUsers, setLoadedUsers] = useState({

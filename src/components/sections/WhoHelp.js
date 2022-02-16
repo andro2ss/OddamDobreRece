@@ -1,4 +1,4 @@
-import { Decoration } from "../../common/decorations/Decoration";
+import { Decoration } from "../common/decorations/Decoration";
 import React, { useState } from "react";
 
 const dataArray = [
