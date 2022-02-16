@@ -147,7 +147,7 @@ export function WhoHelp() {
   };
 
   return (
-    <div id="whoHelp">
+    <section id="whoHelp">
       <h2 className="section__title">Komu pomagamy?</h2>
       <Decoration />
       <div className="btn__box">
@@ -205,6 +205,6 @@ export function WhoHelp() {
           ""
         )}
       </ul>
-    </div>
+    </section>
   );
 }

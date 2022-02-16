@@ -2,7 +2,7 @@ import React from "react";
 
 export function ThreeColumns() {
   return (
-    <div id="threeColumns">
+    <section id="threeColumns">
       <div className="column__container">
         <span>10</span>
         <span>ODDANYCH&nbsp;WORKÓW</span>
@@ -29,6 +29,6 @@ export function ThreeColumns() {
           similique temporibus!
         </span>
       </div>
-    </div>
+    </section>
   );
 }

@@ -4,7 +4,7 @@ import React from "react";
 
 export function SimpleSteps({ logUser }) {
   return (
-    <div id="simpleSteps">
+    <section id="simpleSteps">
       <h2 className="section__title">Wystarczą 4 proste kroki</h2>
       <Decoration />
       <div className="box">
@@ -50,6 +50,6 @@ export function SimpleSteps({ logUser }) {
         </div>
       </div>
       <Button_OddajRzecz logUser={logUser} />
-    </div>
+    </section>
   );
 }

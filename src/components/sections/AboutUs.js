@@ -3,7 +3,7 @@ import React from "react";
 
 export function AboutUs() {
   return (
-    <div id="aboutUs">
+    <section id="aboutUs">
       <div className="container--left">
         <h2 className="section__title">O nas</h2>
         <Decoration />
@@ -25,6 +25,6 @@ export function AboutUs() {
           alt="ludzie"
         />
       </div>
-    </div>
+    </section>
   );
 }

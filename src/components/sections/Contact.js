@@ -35,7 +35,7 @@ export function Contact() {
   );
 
   return (
-    <div id="contact">
+    <section id="contact">
       <div className="section__container">
         <form
           className="form"
@@ -108,6 +108,6 @@ export function Contact() {
           </button>
         </form>
       </div>
-    </div>
+    </section>
   );
 }
