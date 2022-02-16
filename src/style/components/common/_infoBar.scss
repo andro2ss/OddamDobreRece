@@ -1,0 +1,17 @@
+#infoBar {
+  width: 100%;
+  padding: 50px;
+  margin: 30px auto;
+  background: $color-3;
+  text-align: left;
+  letter-spacing: 0px;
+  opacity: 1;
+
+  h3{
+    margin: 0;
+    font: normal normal 600 36px/32px $font-base;
+    color: #000000;
+  }
+  font: normal normal normal 22px/30px $font-base;
+  color: $color-5;
+}
