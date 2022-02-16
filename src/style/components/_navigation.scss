@@ -1,3 +1,5 @@
+@import "hamburgerMenu";
+
 .nav__container {
   display: flex;
   flex-direction: column;
@@ -41,6 +43,7 @@
     li {
       padding: 9px 20px;
       color: $color-5;
+
       .nav__item {
         cursor: pointer;
       }
@@ -53,11 +56,16 @@
     }
 
     @media only screen and (max-width: 767px) {
-      flex-direction: column;
       padding: 20px;
       li {
         align-self: center;
       }
+    }
+  }
+
+  .nav__page.menu {
+    @media only screen and (max-width: 767px) {
+      flex-direction: column;
     }
   }
 }
