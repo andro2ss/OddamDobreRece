@@ -1,7 +1,7 @@
 import { addDoc, collection } from "firebase/firestore";
 import db from "../../firebase";
 
-export const createNewUser = async (login, password, setLoadedUsers) => {
+export const createNewUser = async (login, password) => {
   const collectionRef = collection(db, "users");
   const payload = { email: login, password: password };
   const docRef = await addDoc(collectionRef, payload);
