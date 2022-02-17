@@ -1,10 +1,28 @@
 import React from "react";
 import SelectInput from "../../common/SelectInput";
+import OrganisationsCheckbox from "../../common/OrganisationsCheckbox";
 
-export function Location({ city, setCity }) {
+export function Location({
+  city,
+  setCity,
+  organisations,
+  setOrganisations,
+  textF,
+  setTextF,
+}) {
   const sData = {
     name: "lokalizacja",
     values: ["Poznań", "Warszawa", "Kraków", "Wrocław", "Katowice"],
+  };
+  const checkboxData = {
+    name: "organisations",
+    values: [
+      "dzieciom",
+      "samotnym matkom",
+      "bezdomnym",
+      "niepełnosprawnym",
+      "osobom starszym",
+    ],
   };
   return (
     <div>
@@ -16,19 +34,23 @@ export function Location({ city, setCity }) {
       </div>
       <div>
         <h4>Komu chcesz pomóc?</h4>
-        <div>
-          <button>dzieciom</button>
-          <button>samotnym matkom</button>
-          <button>bezdomnym</button>
-          <button>niepełnosprawnym</button>
-          <button>osobom starszym</button>
-        </div>
+        <OrganisationsCheckbox
+          options={checkboxData}
+          val={organisations}
+          setVal={setOrganisations}
+        />
       </div>
       <div>
         <label htmlFor="wybranaOrganizacja">
           <h4>Wpisz nazwę konkretnej organizacji (opcjonalnie)</h4>
         </label>
-        <input type="text" id="wybranaOrganizacja" name="wybranaOrganizacja" />
+        <input
+          type="text"
+          id="wybranaOrganizacja"
+          name="wybranaOrganizacja"
+          value={textF}
+          onChange={(e) => setTextF(e.target.value)}
+        />
       </div>
     </div>
   );

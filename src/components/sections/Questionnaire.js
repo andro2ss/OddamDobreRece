@@ -11,6 +11,8 @@ function Questionnaire({ setInfoBarText }) {
   const [step1Value, setStep1Value] = useState("init");
   const [step2Value, setStep2Value] = useState(0);
   const [step3ValueCity, setStep3ValueCity] = useState(0);
+  const [step3ValueOrg, setStep3ValueOrg] = useState([]);
+  const [step3ValueTxtF, setStep3ValueTxtF] = useState("");
 
   useEffect(() => {
     switch (step) {
@@ -35,7 +37,14 @@ function Questionnaire({ setInfoBarText }) {
           "Jeśli wiesz komu chcesz pomóc, możesz wpisać nazwę tej organizacji w wyszukiwarce. Możesz też filtrować organizacje po ich lokalizacji bądź celu ich pomocy."
         );
         setSectionBody(
-          <Location city={step3ValueCity} setCity={setStep3ValueCity} />
+          <Location
+            city={step3ValueCity}
+            setCity={setStep3ValueCity}
+            organisations={step3ValueOrg}
+            setOrganisations={setStep3ValueOrg}
+            textF={step3ValueTxtF}
+            setTextF={setStep3ValueTxtF}
+          />
         );
         break;
       case 4:
@@ -51,10 +60,19 @@ function Questionnaire({ setInfoBarText }) {
         setSectionBody(<div>dziekowka</div>);
         break;
     }
-    console.log(step1Value);
-    console.log(step2Value);
-    console.log(step3ValueCity);
-  }, [step, step1Value, step2Value, step3ValueCity]);
+    console.log("co: " + step1Value.item);
+    console.log("worki: " + step2Value);
+    console.log("miasto: " + step3ValueCity);
+    console.log("organ: " + step3ValueOrg);
+    console.log("textF: " + step3ValueTxtF);
+  }, [
+    step,
+    step1Value,
+    step2Value,
+    step3ValueCity,
+    step3ValueOrg,
+    step3ValueTxtF,
+  ]);
 
   return (
     <section id="questionnaire">
@@ -81,6 +99,14 @@ function Questionnaire({ setInfoBarText }) {
                 alert("Aby przejść do kolejnego kroku wybierz co chcesz oddać");
               } else if (step === 2 && step2Value === 0) {
                 alert("Podaj liczbę worków, w które spakowano rzeczy");
+              } else if (step === 3 && step3ValueOrg.length === 0) {
+                alert("Wybierz komu chcesz pomoć");
+              } else if (
+                step === 3 &&
+                step3ValueTxtF.length === 0 &&
+                step3ValueCity === 0
+              ) {
+                alert("Wybierz miasto lub wpisz konkretną organizację");
               } else {
                 stepHandle(1, setStep, step);
               }
