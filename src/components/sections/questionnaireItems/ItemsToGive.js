@@ -17,7 +17,7 @@ export function ItemsToGive({ setValue, value }) {
           return (
             <div className="radio__container" key={item}>
               <input
-                id={item}
+                id={item.replace(/\s/g, "")}
                 type="radio"
                 name="itemToGive"
                 value={item}
