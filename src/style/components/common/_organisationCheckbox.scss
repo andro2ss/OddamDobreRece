@@ -1,0 +1,30 @@
+.organisation__container {
+  display: flex;
+  flex-wrap: wrap;
+
+  .btn__organisation {
+    margin-right: 24px;
+    margin-bottom: 24px;
+    text-align: left;
+    font: normal normal 300 24px/32px $font-base;
+    letter-spacing: 0;
+    color: #000000;
+    opacity: 1;
+    border: 0.75px solid $color-5;
+
+    input {
+      display: none;
+    }
+
+    label {
+      width: 100%;
+      padding: 11px 25px;
+      display: block;
+    }
+
+  }
+
+  .btn__organisation.active {
+    background-color: $color-3;
+  }
+}
