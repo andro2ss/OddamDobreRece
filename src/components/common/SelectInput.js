@@ -21,11 +21,11 @@ function SelectInput({ selectData, value, setValue }) {
           <p className="select-box__input-text">--wybierz--</p>
           {selectData.values.map((val) => {
             return (
-              <>
+              <div key={uniqId()}>
                 <input
                   className="select-box__input"
                   type="radio"
-                  id={val}
+                  id={val.replace(/\s/g, "")}
                   value={val}
                   name={selectData.name}
                   checked={value === val}
@@ -34,7 +34,7 @@ function SelectInput({ selectData, value, setValue }) {
                   }}
                 />
                 <p className="select-box__input-text">{val}</p>
-              </>
+              </div>
             );
           })}
         </div>
@@ -51,7 +51,7 @@ function SelectInput({ selectData, value, setValue }) {
             <li key={uniqId()}>
               <label
                 className="select-box__option"
-                htmlFor={val}
+                htmlFor={val.replace(/\s/g, "")}
                 aria-hidden="aria-hidden"
                 onClick={() => {
                   setValue(val);
