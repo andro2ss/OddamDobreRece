@@ -3,7 +3,7 @@ import { ItemsToGive } from "./questionnaireItems/ItemsToGive";
 import { BagsAmount } from "./questionnaireItems/BagsAmount";
 import stepHandle from "../../functions/questionnaireSection/stepHandle";
 import { Location } from "./questionnaireItems/Location";
-import { Kurier } from "./questionnaireItems/Kurier";
+import { Courier } from "./questionnaireItems/Courier";
 import { useSelector } from "react-redux";
 import QuestionnaireSum from "./questionnaireItems/QuestionnaireSum";
 
@@ -58,7 +58,7 @@ function Questionnaire({ setInfoBarText, step, setStep }) {
         break;
       case 4:
         setInfoBarText("Podaj adres oraz termin odbioru rzeczy.");
-        setSectionBody(<Kurier setValue={setStep4Value} value={step4Value} />);
+        setSectionBody(<Courier setValue={setStep4Value} value={step4Value} />);
         break;
       case 5:
         setInfoBarText("none");
