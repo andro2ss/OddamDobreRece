@@ -6,11 +6,17 @@ import Questionnaire from "../sections/Questionnaire";
 
 function OddajRzeczy(props) {
   const [infoBarText, setInfoBarText] = useState("Init text");
+  const [step, setStep] = useState(1);
+
   return (
     <div>
       <OddajRzeczyIntro />
-      <InfoBar text={infoBarText} />
-      <Questionnaire setInfoBarText={setInfoBarText} />
+      {step > 4 ? "" : <InfoBar text={infoBarText} />}
+      <Questionnaire
+        setInfoBarText={setInfoBarText}
+        step={step}
+        setStep={setStep}
+      />
       <Contact />
     </div>
   );
