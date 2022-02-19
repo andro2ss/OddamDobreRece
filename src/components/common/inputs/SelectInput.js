@@ -1,5 +1,5 @@
 import React from "react";
-import uniqId from "../../functions/common/uniqId";
+import uniqId from "../../../functions/common/uniqId";
 
 function SelectInput({ selectData, value, setValue }) {
   return (

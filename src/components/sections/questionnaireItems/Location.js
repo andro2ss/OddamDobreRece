@@ -1,6 +1,6 @@
 import React from "react";
-import SelectInput from "../../common/SelectInput";
-import OrganisationsCheckbox from "../../common/OrganisationsCheckbox";
+import SelectInput from "../../common/inputs/SelectInput";
+import OrganisationsCheckbox from "../../common/inputs/OrganisationsCheckbox";
 
 export function Location({
   city,

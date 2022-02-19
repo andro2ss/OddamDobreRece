@@ -1,5 +1,5 @@
 import React from "react";
-import uniqId from "../../functions/common/uniqId";
+import uniqId from "../../../functions/common/uniqId";
 
 function OrganisationsCheckbox({ options, val, setVal }) {
   function newArray(array, arrItem, operation) {
