@@ -24,6 +24,31 @@ function App() {
   });
 
   useEffect(() => {
+    let element = document;
+    let myEvents = "click keypress scroll".split(" ");
+    let handler = function (e) {
+      localStorage.setItem("logoutControl", JSON.stringify(0));
+    };
+
+    for (let i = 0, len = myEvents.length; i < len; i++) {
+      element.addEventListener(myEvents[i], handler, false);
+    }
+
+    setInterval(() => {
+      let logoutControl = JSON.parse(localStorage.getItem("logoutControl"));
+      let loggedUser = JSON.parse(localStorage.getItem("logUser"));
+      if (loggedUser) {
+        logoutControl++;
+        localStorage.setItem("logoutControl", JSON.stringify(logoutControl));
+        console.log("Time to logout:" + parseInt(15 - logoutControl) + " min");
+        if (logoutControl === 15) {
+          window.location.pathname = "/logowanie";
+          localStorage.clear();
+          alert("Wylogowano z powodu 15 minutowej bezczynności");
+        }
+      }
+    }, 60000);
+
     onSnapshot(collection(db, "users"), (snapshot) => {
       setLoadedUsers(
         snapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id }))
