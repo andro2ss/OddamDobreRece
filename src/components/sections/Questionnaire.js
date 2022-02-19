@@ -4,15 +4,26 @@ import { BagsAmount } from "./questionnaireItems/BagsAmount";
 import stepHandle from "../../functions/questionnaireSection/stepHandle";
 import { Location } from "./questionnaireItems/Location";
 import { Kurier } from "./questionnaireItems/Kurier";
+import { useSelector } from "react-redux";
+import QuestionnaireSum from "./questionnaireItems/QuestionnaireSum";
 
-function Questionnaire({ setInfoBarText }) {
-  const [step, setStep] = useState(1);
+function Questionnaire({ setInfoBarText, step, setStep }) {
+  const step1Value = useSelector((state) => state.step1);
+
   const [sectionBody, setSectionBody] = useState(<>init</>);
-  const [step1Value, setStep1Value] = useState("init");
   const [step2Value, setStep2Value] = useState(0);
   const [step3ValueCity, setStep3ValueCity] = useState(0);
   const [step3ValueOrg, setStep3ValueOrg] = useState([]);
   const [step3ValueTxtF, setStep3ValueTxtF] = useState("");
+  const [step4Value, setStep4Value] = useState({
+    street: "",
+    city: "",
+    postCode: "",
+    telephone: "",
+    data: "",
+    hour: "",
+    notes: "",
+  });
 
   useEffect(() => {
     switch (step) {
@@ -20,9 +31,7 @@ function Questionnaire({ setInfoBarText }) {
         setInfoBarText(
           "Uzupełnij szczegóły dotyczące Twoich rzeczy. Dzięki temu będziemy wiedzieć komu najlepiej je przekazać."
         );
-        setSectionBody(
-          <ItemsToGive setValue={setStep1Value} value={step1Value} />
-        );
+        setSectionBody(<ItemsToGive />);
         break;
       case 2:
         setInfoBarText(
@@ -49,22 +58,25 @@ function Questionnaire({ setInfoBarText }) {
         break;
       case 4:
         setInfoBarText("Podaj adres oraz termin odbioru rzeczy.");
-        setSectionBody(<Kurier />);
+        setSectionBody(<Kurier setValue={setStep4Value} value={step4Value} />);
         break;
       case 5:
-        setInfoBarText("ale urwał");
-        setSectionBody(<div>Podsumowanko</div>);
+        setInfoBarText("none");
+        setSectionBody(
+          <QuestionnaireSum
+            data1={step2Value}
+            data2={step3ValueCity}
+            data3={step3ValueOrg}
+            data4={step3ValueTxtF}
+            data5={step4Value}
+          />
+        );
         break;
       case 6:
-        setInfoBarText("danke");
+        setInfoBarText("none");
         setSectionBody(<div>dziekowka</div>);
         break;
     }
-    console.log("co: " + step1Value.item);
-    console.log("worki: " + step2Value);
-    console.log("miasto: " + step3ValueCity);
-    console.log("organ: " + step3ValueOrg);
-    console.log("textF: " + step3ValueTxtF);
   }, [
     step,
     step1Value,
@@ -72,12 +84,13 @@ function Questionnaire({ setInfoBarText }) {
     step3ValueCity,
     step3ValueOrg,
     step3ValueTxtF,
+    step4Value,
   ]);
 
   return (
     <section id="questionnaire">
-      <span className="stepCounter">Krok {step}/4</span>
-      <div>{sectionBody}</div>
+      {step > 4 ? "" : <span className="stepCounter">Krok {step}/4</span>}
+      {sectionBody}
       <div className="btn__container">
         {step === 1 || step === 6 ? (
           ""
@@ -107,6 +120,18 @@ function Questionnaire({ setInfoBarText }) {
                 step3ValueCity === 0
               ) {
                 alert("Wybierz miasto lub wpisz konkretną organizację");
+              } else if (step === 4 && step4Value.street === "") {
+                alert("Podaj ulice");
+              } else if (step === 4 && step4Value.city === "") {
+                alert("Podaj miasto");
+              } else if (step === 4 && step4Value.postCode === "") {
+                alert("Podaj kod pocztowy");
+              } else if (step === 4 && step4Value.data === "") {
+                alert("Podaj datę");
+              } else if (step === 4 && step4Value.telephone === "") {
+                alert("Podaj numer telefonu");
+              } else if (step === 4 && step4Value.hour === "") {
+                alert("Podaj godzinę");
               } else {
                 stepHandle(1, setStep, step);
               }
