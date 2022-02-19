@@ -1,0 +1,32 @@
+#questionnaire {
+
+  .checkbox__container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .radio__container {
+    display: flex;
+    margin: 20px 0;
+
+    label {
+      width: 80%;
+    }
+
+    input[type="radio"] {
+      margin-right: 20px;
+      width: 40px;
+      height: 40px;
+      cursor: pointer;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      -o-appearance: none;
+      appearance: none;
+      border: 0.75px solid #3C3C3C;
+
+      &:checked {
+        background: $color-3;
+      }
+    }
+  }
+}

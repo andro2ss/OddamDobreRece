@@ -1,0 +1,16 @@
+#questionnaire {
+  #wybranaOrganizacja {
+    max-width: 570px;
+    width: 100%;
+    text-align: left;
+    font: normal normal 300 24px/32px $font-base;
+    letter-spacing: 0px;
+    color: #000000;
+    opacity: 1;
+    background: inherit;
+
+    @media only screen and (max-width: 1400px) {
+      margin-bottom: 30px;
+    }
+  }
+}
