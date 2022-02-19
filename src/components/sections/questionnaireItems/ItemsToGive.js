@@ -1,6 +1,8 @@
 import React from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { step1NewValue } from "../../../actions";
 
-export function ItemsToGive({ setValue, value }) {
+export function ItemsToGive() {
   const stuffs = [
     "ubrania, które nadają się do ponownego użycia",
     "ubrania, do wyrzucenia",
@@ -8,6 +10,8 @@ export function ItemsToGive({ setValue, value }) {
     "książki",
     "Inne",
   ];
+  const step1Value = useSelector((state) => state.step1);
+  const dispatch = useDispatch();
 
   return (
     <div className="ItemsToGive">
@@ -21,16 +25,16 @@ export function ItemsToGive({ setValue, value }) {
                 type="radio"
                 name="itemToGive"
                 value={item}
-                onChange={() => {
-                  setValue({ item });
+                onChange={(e) => {
+                  dispatch(step1NewValue({ item }));
                 }}
-                checked={value.item === item}
+                checked={step1Value.item === item}
               />
               <label
                 htmlFor="itemToGive"
                 onClick={(e) => {
                   e.target.parentElement.firstChild.checked = true;
-                  setValue({ item });
+                  dispatch(step1NewValue({ item }));
                 }}
               >
                 {item}
