@@ -1,5 +1,5 @@
 import findUser from "./findUser";
-import { createNewUser } from "./addUserInServer";
+import { createNewUser } from "./createNewUser";
 
 export default function registerNewUser(
   errorSum,
