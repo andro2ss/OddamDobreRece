@@ -2,22 +2,31 @@
   background-image: url("../../../assets/Background-Form.jpg");
   background-repeat: no-repeat;
   background-size: 100% 100%;
-  padding: 36px 40% 50px 5%;
+  padding: 36px 38% 50px 5%;
   height: 800px;
 
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: space-between;
 
-  @media only screen and (max-width: 1299px) {
+  @media only screen and (max-width: 1400px) {
     background: $color-1;
     height: 100%;
+    min-height: 800px;
     padding: 36px 5% 50px 5%;
-    #wybranaOrganizacja{
+    position: relative;
+    #wybranaOrganizacja {
       margin-bottom: 30px;
     }
+    .bagsAmount {
+      display: block;
+      position: absolute;
+      width: 100%;
+      padding-right: 8%;
+      top: 60px;
 
     }
+  }
 
   .stepCounter {
     text-align: left;
@@ -36,7 +45,7 @@
     margin: 70px 0 50px 0;
   }
 
-  h4{
+  h4 {
     text-align: left;
     font: normal normal 600 24px/32px $font-base;
     letter-spacing: 0;
@@ -47,14 +56,14 @@
   }
 
   label {
-    align-self: center;
     text-align: left;
     font: normal normal 300 24px/32px $font-base;
     letter-spacing: 0;
     color: #000000;
     opacity: 1;
     cursor: pointer;
-    h4{
+
+    h4 {
       margin-top: 0;
     }
   }
@@ -62,6 +71,12 @@
   .select__container {
     display: flex;
     column-gap: 25px;
+    flex-wrap: wrap;
+    row-gap: 25px;
+
+    label {
+      align-self: center;
+    }
 
     select {
       text-align: left;
@@ -79,11 +94,16 @@
       }
     }
 
+
   }
 
   .radio__container {
     display: flex;
     margin: 20px 0;
+
+    label {
+      width: 80%;
+    }
 
     input[type="radio"] {
       margin-right: 20px;
@@ -116,6 +136,7 @@
     column-gap: 50px;
     align-items: flex-end;
 
+
     .btn__stepChange {
       width: 180px;
       height: 80px;
@@ -130,7 +151,7 @@
     }
   }
 
-  #wybranaOrganizacja{
+  #wybranaOrganizacja {
     max-width: 570px;
     width: 100%;
     text-align: left;
@@ -140,4 +161,134 @@
     opacity: 1;
     background: inherit;
   }
+
+  .inputs__container--big {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+    @media only screen and (max-width: 1000px) {
+      flex-direction: column;
+    }
+  }
+
+  .inputs__container--small {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 392px;
+  }
+
+  .textareaInput,
+  .dateInput,
+  .textInput,
+  .timeInput {
+    margin-bottom: 24px;
+    max-width: 392px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: left;
+    font: normal normal 300 24px/32px Open Sans;
+    letter-spacing: 0px;
+    color: #000000;
+    opacity: 1;
+
+    textarea {
+      height: 120px;
+      width: 256px;
+      resize: none;
+    }
+
+    input {
+      width: 256px;
+      height: 40px;
+    }
+
+    label {
+      max-width: 114px;
+    }
+
+    @media only screen and (max-width: 550px) {
+      flex-direction: column;
+      justify-content: center;
+      row-gap: 10px;
+
+      label {
+        width: 100%;
+        max-width: 100%;
+        text-align: left;
+        align-self: flex-start;
+      }
+    }
+
+  }
+
+  .questionnaireSummary {
+    h3 {
+      margin-top: 20px;
+      margin-bottom: 30px;
+    }
+
+    h4 {
+      margin-top: 30px;
+
+    }
+
+    img {
+      width: 50px;
+      height: 50px;
+      margin-right: 20px;
+    }
+
+    .container--big {
+      display: flex;
+      width: 100%;
+      @media only screen and (max-width: 860px) {
+        flex-direction: column;
+      }
+    }
+
+    .box {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px
+    }
+
+    ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      margin: 0 271px 30px 0;
+      padding: 0;
+      width: 100%;
+      max-width: 272px;
+
+      li {
+        margin: 10px 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+
+
+        span {
+          &:first-child {
+            max-width: 114px;
+          }
+        }
+      }
+    }
+
+    span {
+      text-align: left;
+      font: normal normal 300 24px/32px Open Sans;
+      letter-spacing: 0px;
+      color: #000000;
+      opacity: 1;
+    }
+  }
 }
+
