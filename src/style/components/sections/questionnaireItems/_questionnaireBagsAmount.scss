@@ -1,0 +1,42 @@
+#questionnaire {
+
+  .bagsAmount {
+
+    .select__container {
+      display: flex;
+      column-gap: 25px;
+      flex-wrap: wrap;
+      row-gap: 25px;
+
+      label {
+        align-self: center;
+      }
+
+      select {
+        text-align: left;
+        font: normal normal 300 24px/33px $font-base;
+        letter-spacing: 0;
+        color: #000000;
+        opacity: 1;
+        background: transparent;
+
+        option {
+          &:first-child {
+            display: none
+          }
+
+        }
+      }
+
+
+    }
+
+    @media only screen and (max-width: 1400px) {
+      display: block;
+      position: absolute;
+      width: 100%;
+      padding-right: 8%;
+      top: 60px;
+    }
+  }
+}
