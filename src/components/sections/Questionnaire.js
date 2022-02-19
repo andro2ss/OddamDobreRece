@@ -6,6 +6,7 @@ import { Location } from "./questionnaireItems/Location";
 import { Courier } from "./questionnaireItems/Courier";
 import { useSelector } from "react-redux";
 import QuestionnaireSum from "./questionnaireItems/QuestionnaireSum";
+import QuestionnaireThanks from "./questionnaireItems/QuestionnaireThanks";
 
 function Questionnaire({ setInfoBarText, step, setStep }) {
   const step1Value = useSelector((state) => state.step1);
@@ -74,7 +75,7 @@ function Questionnaire({ setInfoBarText, step, setStep }) {
         break;
       case 6:
         setInfoBarText("none");
-        setSectionBody(<div>dziekowka</div>);
+        setSectionBody(<QuestionnaireThanks />);
         break;
     }
   }, [
@@ -91,56 +92,62 @@ function Questionnaire({ setInfoBarText, step, setStep }) {
     <section id="questionnaire">
       {step > 4 ? "" : <span className="stepCounter">Krok {step}/4</span>}
       {sectionBody}
-      <div className="btn__container">
-        {step === 1 || step === 6 ? (
-          ""
-        ) : (
-          <button
-            className="btn__stepChange"
-            onClick={() => stepHandle(-1, setStep, step)}
-          >
-            Wstecz
-          </button>
-        )}
-        {step === 6 ? (
-          ""
-        ) : (
-          <button
-            className="btn__stepChange"
-            onClick={() => {
-              if (step === 1 && step1Value === "init") {
-                alert("Aby przejść do kolejnego kroku wybierz co chcesz oddać");
-              } else if (step === 2 && step2Value === 0) {
-                alert("Podaj liczbę worków, w które spakowano rzeczy");
-              } else if (step === 3 && step3ValueOrg.length === 0) {
-                alert("Wybierz komu chcesz pomoć");
-              } else if (
-                step === 3 &&
-                step3ValueTxtF.length === 0 &&
-                step3ValueCity === 0
-              ) {
-                alert("Wybierz miasto lub wpisz konkretną organizację");
-              } else if (step === 4 && step4Value.street === "") {
-                alert("Podaj ulice");
-              } else if (step === 4 && step4Value.city === "") {
-                alert("Podaj miasto");
-              } else if (step === 4 && step4Value.postCode === "") {
-                alert("Podaj kod pocztowy");
-              } else if (step === 4 && step4Value.data === "") {
-                alert("Podaj datę");
-              } else if (step === 4 && step4Value.telephone === "") {
-                alert("Podaj numer telefonu");
-              } else if (step === 4 && step4Value.hour === "") {
-                alert("Podaj godzinę");
-              } else {
-                stepHandle(1, setStep, step);
-              }
-            }}
-          >
-            {step === 5 ? "Potwierdzam" : "Dalej"}
-          </button>
-        )}
-      </div>
+      {step === 6 ? (
+        ""
+      ) : (
+        <div className="btn__container">
+          {step === 1 || step === 6 ? (
+            ""
+          ) : (
+            <button
+              className="btn__stepChange"
+              onClick={() => stepHandle(-1, setStep, step)}
+            >
+              Wstecz
+            </button>
+          )}
+          {step === 6 ? (
+            ""
+          ) : (
+            <button
+              className="btn__stepChange"
+              onClick={() => {
+                if (step === 1 && step1Value === "init") {
+                  alert(
+                    "Aby przejść do kolejnego kroku wybierz co chcesz oddać"
+                  );
+                } else if (step === 2 && step2Value === 0) {
+                  alert("Podaj liczbę worków, w które spakowano rzeczy");
+                } else if (step === 3 && step3ValueOrg.length === 0) {
+                  alert("Wybierz komu chcesz pomoć");
+                } else if (
+                  step === 3 &&
+                  step3ValueTxtF.length === 0 &&
+                  step3ValueCity === 0
+                ) {
+                  alert("Wybierz miasto lub wpisz konkretną organizację");
+                } else if (step === 4 && step4Value.street === "") {
+                  alert("Podaj ulice");
+                } else if (step === 4 && step4Value.city === "") {
+                  alert("Podaj miasto");
+                } else if (step === 4 && step4Value.postCode === "") {
+                  alert("Podaj kod pocztowy");
+                } else if (step === 4 && step4Value.data === "") {
+                  alert("Podaj datę");
+                } else if (step === 4 && step4Value.telephone === "") {
+                  alert("Podaj numer telefonu");
+                } else if (step === 4 && step4Value.hour === "") {
+                  alert("Podaj godzinę");
+                } else {
+                  stepHandle(1, setStep, step);
+                }
+              }}
+            >
+              {step === 5 ? "Potwierdzam" : "Dalej"}
+            </button>
+          )}
+        </div>
+      )}
     </section>
   );
 }

@@ -1,0 +1,27 @@
+#questionnaire {
+  .questionnaireThanks {
+    display: flex;
+    flex-direction: column;
+    max-width: 628px;
+    text-align: center;
+    font: normal normal 300 40px/55px Open Sans;
+    letter-spacing: -0.8px;
+    color: #3C3C3C;
+    opacity: 1;
+    margin: 0 auto;
+    height: 100%;
+    justify-content: center;
+
+    @media only screen and (max-width: 1400px) {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      height: auto;
+    }
+
+    span {
+      margin-bottom: 25px;
+    }
+  }
+}
