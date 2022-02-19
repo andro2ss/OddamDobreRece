@@ -4,7 +4,7 @@ import DateInput from "../../common/inputs/DateInput";
 import TextareaInput from "../../common/inputs/TextareaInput";
 import TimeInput from "../../common/inputs/TimeInput";
 
-export function Kurier({ value, setValue }) {
+export function Courier({ value, setValue }) {
   const [street, setStreet] = useState("");
   const [city, setCity] = useState("");
   const [postCode, setPostCode] = useState("");
