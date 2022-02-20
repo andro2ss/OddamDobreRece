@@ -10,6 +10,7 @@ import Container from "@mui/material/Container";
 import { collection, onSnapshot } from "firebase/firestore";
 import db from "./firebase";
 import ZorganizujZbiorke from "./components/pages/ZorganizujZbiorke";
+import getTime from "./functions/common/getTime";
 
 function App() {
   const [loadedUsers, setLoadedUsers] = useState({
@@ -24,27 +25,31 @@ function App() {
   });
 
   useEffect(() => {
-    let element = document;
     let myEvents = "click keypress scroll".split(" ");
     let handler = function (e) {
-      localStorage.setItem("logoutControl", JSON.stringify(0));
+      localStorage.setItem("timeStamp", JSON.stringify(getTime()));
     };
 
     for (let i = 0, len = myEvents.length; i < len; i++) {
-      element.addEventListener(myEvents[i], handler, false);
+      document.addEventListener(myEvents[i], handler, false);
     }
 
     setInterval(() => {
-      let logoutControl = JSON.parse(localStorage.getItem("logoutControl"));
       let loggedUser = JSON.parse(localStorage.getItem("logUser"));
+      let timeStamp = JSON.parse(localStorage.getItem("timeStamp"));
       if (loggedUser) {
-        logoutControl++;
-        localStorage.setItem("logoutControl", JSON.stringify(logoutControl));
-        console.log("Time to logout:" + parseInt(15 - logoutControl) + " min");
-        if (logoutControl === 15) {
+        console.log(
+          "Time to logout:" +
+            parseInt(15 - (getTime().time - timeStamp.time)) +
+            " min"
+        );
+        if (
+          timeStamp.date !== getTime().date ||
+          Number(timeStamp.time) + 15 < Number(getTime().time)
+        ) {
           window.location.pathname = "/logowanie";
           localStorage.clear();
-          alert("Wylogowano z powodu 15 minutowej bezczynności");
+          alert("Twoja sesja wygasła");
         }
       }
     }, 60000);
