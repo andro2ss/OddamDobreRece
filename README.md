@@ -15,3 +15,6 @@ Użytkownik ma możliwość ręcznego wylogowania się, w przypadku nieaktywnoś
 <li>Redux</li>
 <li>Sass</li>
 <li>Firebase / Firestore</li>
+
+## Live preview
+### [Oddam w dobre rece](https://oddajrzeczy-ab.web.app/)
